@@ -1,0 +1,1 @@
+This project app to discover and review restaurants with specialty foods

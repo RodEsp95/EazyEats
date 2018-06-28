@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Table
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="DELIMITER", discriminatorType=DiscriminatorType.STRING)
-@DiscriminatorValue("U")
+@DiscriminatorValue("User")
 public class User {
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="userSequence")
@@ -35,6 +35,18 @@ public class User {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
+	public User(int id, String name, String username, String password, String email, List<Restaurant> favorites) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.username = username;
+		this.password = password;
+		this.email = email;
+		this.favorites = favorites;
+	}
+
+
 
 	public int getId() {
 		return id;
